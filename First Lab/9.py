@@ -6,6 +6,6 @@ x2 = int(input("enter x2 "))
 y2 = int(input("enter y2 "))
 
 
-dis = math.sqrt((x2-x1)**2 + (y2- y1)**2)
+dis = math.sqrt(pow((x2-x1), 2) + pow((y2- y1), 2))
 
 print(dis)
