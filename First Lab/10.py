@@ -13,9 +13,11 @@ def rotate_coordinate(x, y, degrees):
 
     
 original_x, original_y = 10, 0
-angle = 90
+angle = 45
 new_x, new_y = rotate_coordinate(original_x, original_y, angle)
 
 print(f"Original: ({original_x}, {original_y})")
 print(f"Rotated: ({new_x}, {new_y})")
+    
+    
     
