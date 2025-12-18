@@ -41,7 +41,10 @@ def main():
         screen.fill(WHITE)
         
         # draw line
-        LineDraw(100, 100,700, 500)
+        LineDraw(100, 100, 700, 100)
+        LineDraw(100, 500, 700, 500)
+        LineDraw(200, 50, 200, 550)
+        LineDraw(600, 50, 600, 550)
         
         # update the scren 
         pygame.display.flip()
