@@ -34,7 +34,6 @@ def LineDraw(x1, y1, x2, y2):
         
         p = 2*dy- dx
         
-        k= 0
         
         for i in range(dx):
             if(p<0):
