@@ -20,6 +20,9 @@ all_sprites = pygame.sprite.Group()
 all_sprites.add(bird)
 pipe_group = pygame.sprite.Group()
 
+ground_rect = pygame.Rect(0, GROUND_Y, SCREEN_WIDTH, GROUND_HEIGHT)
+
+
 
 
 
@@ -108,7 +111,7 @@ while running:
         pipe_collisions = pygame.sprite.spritecollide(bird, pipe_group, False)
         if pipe_collisions:
             game_state = "game_over"
-        if bird.rect.bottom >= SCREEN_HEIGHT:
+        if bird.rect.bottom >= ground_rect.top:
             game_state = "game_over"
         if bird.rect.top <= 0:
             game_state = "game_over"
@@ -135,6 +138,7 @@ while running:
  
     screen.fill(COLOR_BG) 
     all_sprites.draw(screen)
+    pygame.draw.rect(screen, COLOR_GROUND, ground_rect)
 
 
     score_text = str(score)
