@@ -26,7 +26,7 @@ class Game:
         self.clock = pygame.time.Clock()
 
         # Fonts
-        self.font = pygame.font.Font(None, 48)
+        self.font = pygame.font.Font(None, 30)
 
         # Entities and groups
         self.bird = Bird()
@@ -50,7 +50,7 @@ class Game:
 
     # ---------- Game setup / reset ----------
 
-    def spawn_pipe_pair(self) -> None:
+    def spawn_pipe_pair(self) :
         """Create a top and bottom pipe with a random vertical gap."""
         pipe_x = SCREEN_WIDTH
 
@@ -58,7 +58,7 @@ class Game:
         max_pipe_y = SCREEN_HEIGHT - 100
         pipe_y = random.randint(min_pipe_y, max_pipe_y)
 
-        top_pipe_y = pipe_y - PIPE_GAP // 2 - PIPE_HEIGHT
+        top_pipe_y = pipe_y - PIPE_GAP // 2 
         bottom_pipe_y = pipe_y + PIPE_GAP // 2
 
         top_pipe = Pipe(pipe_x, top_pipe_y, is_top=True)
@@ -70,7 +70,7 @@ class Game:
         # Track the bottom pipe for scoring
         self.pipe_pairs.append({"pipe": bottom_pipe, "passed": False})
 
-    def reset_game(self) -> None:
+    def reset_game(self):
         """Reset bird, pipes, score, and timers after game over."""
         # Reset bird
         self.bird.rect.center = (BIRD_START_X, BIRD_START_Y)
@@ -92,7 +92,7 @@ class Game:
 
     # ---------- Main loop pieces ----------
 
-    def handle_events(self) -> None:
+    def handle_events(self) :
         """Handle input and window events."""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -108,7 +108,8 @@ class Game:
                     elif self.game_state == "game_over":
                         self.reset_game()
 
-    def update(self) -> None:
+
+    def update(self) :
         """Update game state for one frame."""
         if self.game_state == "playing":
             # Pipe spawn timer
@@ -153,7 +154,7 @@ class Game:
         # Limit FPS
         self.clock.tick(FPS)
 
-    def draw(self) -> None:
+    def draw(self) :
         """Draw everything for one frame."""
         # Background
         self.screen.fill(COLOR_BG)
@@ -174,7 +175,7 @@ class Game:
         if self.game_state == "start":
             msg = "Press SPACE to start"
         elif self.game_state == "game_over":
-            msg = "Game Over!"
+            msg = "Game Over! Press SPACE to restart"
         else:
             msg = None
 
@@ -185,7 +186,8 @@ class Game:
 
         pygame.display.update()
 
-    def run(self) -> None:
+
+    def run(self) :
         """Main game loop."""
         while self.running:
             self.handle_events()
