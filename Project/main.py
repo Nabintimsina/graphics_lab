@@ -1,69 +1,42 @@
-import pygame
 import sys
-import small_circle as sc
+import pygame
+from settings import SCREEN_WIDTH, SCREEN_HEIGHT, FPS, COLOR_BG
+from entities import Bird, Pipe
 
 pygame.init()
-WIDTH, HEIGHT = 800, 600
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Midpoint Circle DRAWING ALGORITHM")
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("Flappy Bird")
+clock = pygame.time.Clock()
 
-def printPoints(xc, yc, x, y):
-    
-        screen.set_at((xc+x,yc+y), BLACK)
-        screen.set_at((xc-x,yc-y), BLACK)
-        screen.set_at((xc+x,yc-y), BLACK)
-        screen.set_at((xc-x,yc+y), BLACK)
-        
-        screen.set_at((xc+y,yc+x), BLACK)
-        screen.set_at((xc-y,yc-x), BLACK)
-        screen.set_at((xc+y,yc-x), BLACK)
-        screen.set_at((xc-y,yc+x), BLACK)
+bird = Bird()
 
-        
+all_sprites = pygame.sprite.Group()
+all_sprites.add(bird)
 
-
-def drawCircle(xc, yc, r):
-    
-    x = 0
-    y= r
-    
-    p = 1-r
-    
-    while (y>x):
-        
-        if(p<0):
-            x= x+1
-            p = p+ 2*x+1
-         
-        else:
-            x = x+1
-            # y= y-1
-            p= p+2*x - 2*y +1
-            
-        
-        printPoints(xc, yc, x, y)
-        
-
+pipe_group = pygame.sprite.Group()
 
 
 def main():
-    while True:
+    running = True
+    while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+                running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    bird.jump()
 
-        # clear the screen 
-        screen.fill(WHITE)
-        
-        # draw circle
-        drawCircle(300,300,250)
-        
-        # update the scren 
-        pygame.display.flip()
-        
 
-if __name__ == "__main__" :
+        screen.fill(COLOR_BG) 
+        all_sprites.update()
+        all_sprites.draw(screen)
+        pygame.display.update()
+        clock.tick(FPS)
+
+    pygame.quit()
+    sys.exit()
+
+   
+
+if __name__ == "__main__":
     main()

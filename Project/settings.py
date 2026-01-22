@@ -1,0 +1,25 @@
+WIDTH = 400
+HEIGHT = 600
+FPS = 60
+
+
+# birds features
+GRAVITY = 0.5
+BIRD_WIDTH = 34
+BIRD_HEIGHT = 24
+BIRD_START_X = 50
+BIRD_START_Y = HEIGHT // 2
+JUMP_STRENGTH = -10
+
+
+
+PIPE_WIDTH = 70
+PIPE_HEIGHT = 80
+PIPE_GAP = 150
+PIPE_SPEED = 3
+
+COLOR_BG = (135, 206, 235)  # Sky blue
+COLOR_BIRD = (255, 255, 0)  # Yellow
+COLOR_PIPE = (34, 139, 34)  # Forest green
+COLOR_GROUND = (222, 184, 135)  # Burlywood
+COLOR_TEXT = (255, 255, 255)  # White
