@@ -1,6 +1,6 @@
 import pygame
 import sys
-import small_circle as 
+import small_circle as sc
 
 pygame.init()
 WIDTH, HEIGHT = 800, 600
