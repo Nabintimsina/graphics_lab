@@ -6,10 +6,11 @@ FPS = 60
 # birds features
 GRAVITY = 0.5
 JUMP_STRENGTH = -10
-BIRD_WIDTH = 34
-BIRD_HEIGHT = 24
+BIRD_WIDTH = 40
+BIRD_HEIGHT = 40
 BIRD_START_X = 50
 BIRD_START_Y = SCREEN_HEIGHT // 2
+BIRD_IMAGE_PATH = "Project/assets/bird.png"
 
 
 
@@ -27,3 +28,6 @@ COLOR_TEXT = (255, 255, 255)  # White
 
 GROUND_HEIGHT = 20
 GROUND_Y = SCREEN_HEIGHT - GROUND_HEIGHT
+
+
+OFFSET = 9 # small offset to make collision detection more forgiving

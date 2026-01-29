@@ -6,10 +6,18 @@ from settings import *
 class Bird(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.Surface((BIRD_WIDTH, BIRD_HEIGHT))
-        self.image.fill(COLOR_BIRD)
+
+        image = pygame.image.load(BIRD_IMAGE_PATH).convert_alpha()
+        self.image = image
+        self.image = pygame.transform.scale(self.image, (BIRD_WIDTH, BIRD_HEIGHT))
         self.rect = self.image.get_rect()
         self.rect.center = (BIRD_START_X, BIRD_START_Y)
+
+        # self.image = pygame.Surface((BIRD_WIDTH, BIRD_HEIGHT))
+        # self.image.fill(COLOR_BIRD)
+        # self.rect = self.image.
+        # self.rect.center = (BIRD_START_X, BIRD_START_Y)
+        
         self.velocity = 0
 
 

@@ -11,9 +11,9 @@ BLACK = (0, 0, 0)
 def printPoints(x, y, xc , yc):
     
     screen.set_at((xc+x, yc+y), BLACK)
-    screen.set_at((xc-x, yc-y), BLACK)
+    screen.set_at((xc-x, yc-y), 'red')
     screen.set_at((xc+x, yc-y), BLACK)
-    screen.set_at((xc-x, yc+y), BLACK)
+    screen.set_at((xc-x, yc+y), 'red')
     
 
     

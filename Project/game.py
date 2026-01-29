@@ -15,6 +15,7 @@ from settings import (
     PIPE_SPAWN_INTERVAL,
     BIRD_START_X,
     BIRD_START_Y,
+    OFFSET
 )
 
 from entities import Bird, Pipe
