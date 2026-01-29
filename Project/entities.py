@@ -31,7 +31,7 @@ class Pipe(pygame.sprite.Sprite):
             self.rect.bottomleft = (x, y - PIPE_GAP // 2)
         else:
             self.rect.topleft = (x, y + PIPE_GAP // 2)
-
+                                                                                                                                                                                                            
 
     def update(self):
         self.rect.x -= PIPE_SPEED
