@@ -97,15 +97,19 @@ def Rotate(x1,y1, x2,y2, dtheta):
     y1 = x1*math.sin(theta) + y1*math.cos(theta)
     y2 = x2*math.sin(theta) + y2*math.cos(theta)
     
-    print(x1, y1, x2, y2)
-    
     return (x1, y1, x2, y2)
 
 
-def ReflectionX(x1,y1, x2,y2,):
+def ReflectionXY(x1,y1, x2,y2,):
+    
+    xR1 = y1
+    yR1 = x1
+    xR2 = y2
+    yR2 = x2
+    
+    return (xR1, yR1,xR2, yR2)
     
     
-
     
     
 
@@ -119,15 +123,15 @@ def main():
         # clear the screen 
         screen.fill(WHITE)
         
-        x1 = 100
+        x1 = 200
         y1 = 200
         x2 = 300
-        y2 = 350
+        y2 = 330
         tx = 50
         ty = 50
         sx = 2
         sy = 1
-        theta = -30
+        theta = -20
         
         # draw line
         LineDraw(x1, y1, x2, y2, 'black')
@@ -135,10 +139,12 @@ def main():
         (xt1, yt1, xt2, yt2) = Translate(x1, y1, x2, y2, tx, ty)
         (xs1, ys1, xs2, ys2) = Scale(x1, y1, x2, y2, sx, sy)
         (xr1, yr1, xr2, yr2) = Rotate(x1, y1, x2, y2, theta)
+        (xR1, yR1, xR2, yR2) = ReflectionXY(x1, y1, x2, y2)
         
         LineDraw(xt1,yt1, xt2, yt2, 'green')
         LineDraw(xs1,ys1, xs2, ys2, 'red')
-        LineDraw(xr1, yr1, xr2, yr2, 'blue')
+        LineDraw(xR1, yR1, xR2, yR2, 'blue')
+        LineDraw(xr1, yr1, xr2, yr2, 'yellow' )
        
         
         
