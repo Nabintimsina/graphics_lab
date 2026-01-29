@@ -11,9 +11,9 @@ BLACK = (0, 0, 0)
 def printPoints(x, y, xc , yc):
     
     screen.set_at((xc+x, yc+y), BLACK)
-    screen.set_at((xc-x, yc-y), BLACK)
+    screen.set_at((xc-x, yc-y), 'red')
     screen.set_at((xc+x, yc-y), BLACK)
-    screen.set_at((xc-x, yc+y), BLACK)
+    screen.set_at((xc-x, yc+y), 'red')
     
 
     
@@ -74,7 +74,7 @@ def main():
        
         screen.fill(WHITE)
         
-        drawEllipse(300,400, 50, 80)
+        drawEllipse(300,300, 80, 100)
         
         pygame.display.flip()
         
