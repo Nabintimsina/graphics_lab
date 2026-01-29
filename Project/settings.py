@@ -4,10 +4,17 @@ FPS = 60
 
 
 # birds features
+<<<<<<< HEAD
 GRAVITY = 0.5
 JUMP_STRENGTH = -10
 BIRD_WIDTH = 40
 BIRD_HEIGHT = 40
+=======
+GRAVITY = 0.3
+JUMP_STRENGTH = -6
+BIRD_WIDTH = 34
+BIRD_HEIGHT = 24
+>>>>>>> c4d886017d24f0e62327faca3cf0c7efae8efb33
 BIRD_START_X = 50
 BIRD_START_Y = SCREEN_HEIGHT // 2
 BIRD_IMAGE_PATH = "Project/assets/bird.png"

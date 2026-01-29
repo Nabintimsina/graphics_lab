@@ -74,7 +74,7 @@ def main():
        
         screen.fill(WHITE)
         
-        drawEllipse(300,400, 50, 80)
+        drawEllipse(300,300, 80, 100)
         
         pygame.display.flip()
         
