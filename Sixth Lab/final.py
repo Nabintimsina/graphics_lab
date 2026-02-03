@@ -87,10 +87,10 @@ def main():
         LineDraw(x1, y1, x2, y2, 'black')
 
         Translate(x1, y1, x2, y2, 60, 40) 
-        Rotate(x1, y1, x2, y2, 10)       
+        Rotate(x1, y1, x2, y2, -30)       
         ReflectX(x1, y1, x2, y2)            
         ReflectY(x1, y1, x2, y2)
-        Scale(x1, y1, x2, y2, 1.5, 1)       
+        Scale(x1, y1, x2, y2, 2, 1.5)       
 
         pygame.display.flip()
 
