@@ -65,7 +65,7 @@ while running:
 
     # Rotate cube around y-axis
     cube_vertices_rotated = rotate_y(cube_vertices, angle_y)
-    angle_y += 0.001
+    angle_y += 0.0001
 
     # Project 3D points to 2D (simple perspective projection)
     projected_points = []
